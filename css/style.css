@@ -42,3 +42,6 @@ h3::after {
   display: block;
   margin: auto;
 }
+.pwd_reset{
+  text-decoration: none!important;
+}

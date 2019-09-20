@@ -1,20 +1,23 @@
 <?php 
-session_start();
 if(isset($_POST["submit"])){
+  session_start();
+
+
 $con = mysqli_connect('localhost','root','');
 mysqli_select_db($con, 'hng_task2');
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$s = " SELECT * from reg_user where email = '$email'";
-$result = mysqli_query($con, $s);
+$p = " SELECT * from reg_user where email = '$email'";
+$result = mysqli_query($con, $p);
 $num = mysqli_num_rows($result);
 if ($num == 1) {
-	echo "Email Already Taken";
+	echo "<script>alert('Email Already Taken')</script>";
 }else{
 	$reg= "INSERT INTO reg_user(username , email , password ) values ('$username' ,  '$email', '$password')";
-	mysqli_query($con, $reg);
-  header("location:login.php");
+  mysqli_query($con, $reg);
+  echo "<script>alert('Registration Successful, click ok while we redirect you to the login page' )</script>";
+  header("refresh:2; url=login.php");
 
 }
 }
@@ -62,7 +65,7 @@ if ($num == 1) {
             <div class="form-group">
               <label for="email">Email:</label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="email"
                 class="form-control form-control-lg"
