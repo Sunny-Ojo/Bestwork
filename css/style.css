@@ -1,0 +1,50 @@
+body {
+  background: url('../images/bgimage.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.form-div {
+  margin: 50px auto 50px;
+  padding: 25px 15px 10px 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+.form-div input {
+  color: black;
+  border: none;
+  border-bottom: 2px solid #000;
+  background-color: rgb(223, 197, 223) !important;
+  cursor: pointer;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.signup_btn {
+  color: fuchsia;
+  text-decoration: none !important;
+}
+.signup_btn:hover {
+  color: black;
+  background: white;
+}
+h3::after {
+  content: ' ';
+
+  background: white;
+  width: 90px;
+  height: 3px;
+  display: block;
+  margin: auto;
+}
+.pwd_reset {
+  text-decoration: none !important;
+}
+.msg {
+  margin-top: 200px !important;
+}
